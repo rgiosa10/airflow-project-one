@@ -1,6 +1,6 @@
 # Airflow project
 
-#### By [Ruben Giosa](https://github.com/rgiosa10)
+#### By [Ruben Giosa](https://www.linkedin.com/in/rubengiosa/)
 
 #### This repo showcases work with Airflow to leverage a DAG for automation
 
