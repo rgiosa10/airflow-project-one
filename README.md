@@ -57,25 +57,14 @@ This repo showcases work with Airflow to leverage a DAG for automation of the be
   ```bash
   code .
   ```
-
-* Once in the directory you will need to set up a virtual environment in your terminal:
+* Once VS Code is open, then run the setup file:
   ```bash
-  python3.7 -m venv venv
+  ./setup.sh
   ```
-* Then activate the environment:
+* Then run the airflow setup file:
   ```bash
-  source venv/bin/activate
+  ./airflow_setup.sh
   ```
-* Install the necessary items with requirements.txt:
-  ```bash
-    pip install -r requirements.txt
-  ```
-* Download the necessary csv files listed in the Datasets Used section
-* With your virtual environment now enabled with proper requirements, open the directory:
-  ```bash
-  code .
-  ```
-* Upon launch please update the Google Cloud client and project details to configure it to load to your project
 
 </br>
 
