@@ -13,7 +13,6 @@
 * Pandas
 * Git
 * Markdown
-* NumPy
 * `.gitignore`
 * `requirements.txt`
   
@@ -34,7 +33,14 @@ This repo showcases work with Airflow to leverage a DAG for automation of the be
 * Then uses the three choices to create three Python operator tasks that run simultaneously. It leverages a python_callable to call a function that prints a string using the country name and its happiness ranking in a sentence.
 
 #### DAG Structure:
-<img src="imgs/architecture_diagram.drawio.png" alt="DAG diagram" width="640"/>
+<img src="/Users/Ruben/Desktop/airflow-project-one/imgs/airflow_dag.png" alt="DAG diagram" width="640"/>
+
+Successful logs of print statements for each `PythonOperator()`:
+<img src="/Users/Ruben/Desktop/airflow-project-one/imgs/first.png" alt="DAG diagram" width="640"/>
+
+<img src="/Users/Ruben/Desktop/airflow-project-one/imgs/second.png" alt="DAG diagram" width="640"/>
+
+<img src="/Users/Ruben/Desktop/airflow-project-one/imgs/third.png" alt="DAG diagram" width="640"/>
 
 <br>
 
