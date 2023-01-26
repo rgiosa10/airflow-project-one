@@ -37,36 +37,35 @@ def extract_transform():
     for item in range(3):
         choice_key = random.choice(list(country_rank_dict))
         choice_value = country_rank_dict[choice_key]
-        choice_dict = dict(zip(choice_key,choice_value))
+        choice_dict = {choice_key:choice_value}
 
         with open(f"/opt/airflow/dags/data/country_rank_choice_{counter}.json", 'w') as outfile:
             json.dump(choice_dict, outfile)
+
         counter += 1
         del country_rank_dict[choice_key]
 
 def first_choice():
-    choice = pd.read_json("/opt/airflow/dags/data/country_rank_choice_1.json")
-    for key, value in choice.items():
+    choice = pd.read_json("/opt/airflow/dags/data/country_rank_choice_1.json", orient='index')
+    
+    choice = choice.to_dict()
+
+    for key, value in choice[0].items():
         print(f"{key} has an overall rank of {value} ")
 
 def second_choice():
-    choice = pd.read_json("/opt/airflow/dags/data/country_rank_choice_2.json")
-    for key, value in choice.items():
+    choice = pd.read_json("/opt/airflow/dags/data/country_rank_choice_2.json", orient='index')
+    choice = choice.to_dict()
+
+    for key, value in choice[0].items():
         print(f"{key} has an overall rank of {value} ")
 
 def third_choice():
-    choice = pd.read_json("/opt/airflow/dags/data/country_rank_choice_3.json")
-    for key, value in choice.items():
+    choice = pd.read_json("/opt/airflow/dags/data/country_rank_choice_3.json", orient='index')
+    choice = choice.to_dict()
+
+    for key, value in choice[0].items():
         print(f"{key} has an overall rank of {value} ")
-
-    #first_choice = random.choice(list(country_rank_dict))
-    #second_choice = random.choice(list(country_rank_dict))
-    #third_choice = random.choice(list(country_rank_dict))
-
-
-
-
-
 
 
 with DAG(
